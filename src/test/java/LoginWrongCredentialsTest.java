@@ -8,8 +8,7 @@ import java.util.concurrent.*;
 
 class LoginWrongCredentialsTest {
 
-   private static final String CHROME_DRIVER_PATH = "D:\\chromedriver.exe";
-   private static final String AMAZON_HOMEPAGE = "https:\\amazon.com";
+
    private WebDriver driver;
    private final String ACCOUNT_EMAIL = "dxc03609@cuoly.com";
    private Random randomGenerator = new Random();
@@ -17,7 +16,7 @@ class LoginWrongCredentialsTest {
 
 
 
-   @Test
+
     void unsuccessfullLoginToExistingAccount() {
 
        WebElement signInBtn = driver.findElement(By.xpath("//span[@class=\"nav-line-2 nav-long-width\"]"));

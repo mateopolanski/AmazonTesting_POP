@@ -8,8 +8,6 @@ import java.util.concurrent.*;
 
 class RegisterNewAccountTest {
 
-   private static final String CHROME_DRIVER_PATH = "D:\\chromedriver.exe";
-   private static final String AMAZON_HOMEPAGE = "https:\\amazon.com";
    private WebDriver driver;
    private Random randomGenerator = new Random();
    private int randomInt = randomGenerator.nextInt(10000);
@@ -20,16 +18,9 @@ class RegisterNewAccountTest {
    private Totp totp = new Totp(otpKeyStr);
    private String twoFactorCode = totp.now(); // <- got 2FA coed at this time!
 
-   @BeforeEach
-    void navigateToHomepage() {
 
-               System.setProperty("webdriver.chrome.driver" , CHROME_DRIVER_PATH);
-               driver = new ChromeDriver();
-               driver.manage().window().maximize();
-               driver.get(AMAZON_HOMEPAGE);
-           }
 
-           @Test
+
             void registerNewAccount() {
 
                WebElement signInBtn = driver.findElement(By.xpath("//span[@class=\"nav-line-2 nav-long-width\"]"));
@@ -56,10 +47,6 @@ class RegisterNewAccountTest {
                allow to bypass OTP code, and progress further to register a new account by Selenium.
                 */
            }
-   @AfterEach
-    void closeDriver () {
 
-       driver.quit();
-   }
 }
 
