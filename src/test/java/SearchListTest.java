@@ -9,11 +9,24 @@ import org.testng.asserts.*;
 class SearchListTest extends TestBase {
 
 
-    private static final String AMAZON_PAGE_TITLE = "Amazono.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more";
-    private static final String CHROME_DRIVER_PATH = "D:\\chromedriver.exe";
+
+
     private static final String URL = "https:\\amazon.com";
     private WebDriver driver;
     private static final String SEARCHED_ITEM = "cheyenne";
+
+
+    @FindBy(id = "twotabsearchtextbox")
+    private WebElement searchTextBox;
+
+    @FindBy(xpath = "//span[text()=\"Tattoo Machine Parts\"]")
+    private WebElement searchCategoryTattooMachineParts;
+
+    @FindBy(xpath = "//span[text()=\"Cheyenne\"]")
+    private WebElement CategoryCheyenne;
+
+    @FindBy(xpath = "//span[text()=\"Cheyenne Tattoo Machine Hawk Pen - Black\"]")
+    private WebElement CheyenneHawkPen;
 
 
     public SearchListTest(WebDriver driver) {
@@ -30,19 +43,21 @@ class SearchListTest extends TestBase {
 
 
 
-    void searchForItem(String text) {
+    public searchForItem(String text) {
 
-        @FindBy(id = "twotabsearchtextbox")
-        private WebElement searchTextBox;
+        searchTextBox.sendKeys(text);
+        searchTextBox.sendKeys(Keys.ENTER);
 
-        @FindBy(xpath =)
-        private WebElement searchTextBox;
+        return new search;
+
+
+
 
         WebElement searchBar = driver.findElement(By.id());
         searchBar.sendKeys(SEARCHED_ITEM);
         searchBar.sendKeys(Keys.ENTER);
 
-        driver.findElement(By.xpath("//span[text()=\"Tattoo Machine Parts\"]")).click();
+
         WebDriverWait waiter = new WebDriverWait(driver , 2);
         waiter.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()=\"Cheyenne\"]"))).click();
         driver.findElement(By.xpath("//span[text()=\"Cheyenne Tattoo Machine Hawk Pen - Black\"]")).click();
