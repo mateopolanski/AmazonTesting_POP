@@ -4,8 +4,6 @@ import org.testng.*;
 import org.testng.annotations.*;
 import utils.*;
 
-import java.util.logging.*;
-
 @Listeners
 public abstract class TestBase {
 
@@ -32,7 +30,8 @@ public abstract class TestBase {
         driver.manage().window();
 
         searchListTest = new SearchListTest(driver);
-        addItemToBasket = new AddItemToBasket();
+
+        addItemToBasket = new AddItemToBasket(driver);
 
     }
 
@@ -43,7 +42,6 @@ public abstract class TestBase {
     public void quit (){
         driver.quit();
     }
-
 
 
 

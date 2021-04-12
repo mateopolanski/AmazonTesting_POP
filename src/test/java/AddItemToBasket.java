@@ -16,6 +16,9 @@ class AddItemToBasket extends TestBase {
             "Round Liner Mixed 3RL 5RL 7RL 9RL 11RL Size for Machine Kit Supply (50pcs RL)\"]";
     private static final String ADD_ITEM_TO_BASKET = "add-to-cart-button";
 
+    public AddItemToBasket(WebDriver driver) {
+        super(driver);
+    }
 
 
     @Test

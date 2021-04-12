@@ -5,10 +5,10 @@ import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.asserts.*;
 
+import java.util.concurrent.*;
+
 
 class SearchListTest extends TestBase {
-
-
 
 
     private static final String URL = "https:\\amazon.com";
@@ -28,6 +28,12 @@ class SearchListTest extends TestBase {
     @FindBy(xpath = "//span[text()=\"Cheyenne Tattoo Machine Hawk Pen - Black\"]")
     private WebElement CheyenneHawkPen;
 
+    @FindBy(id = "productTitle")
+    private WebElement productDesc;
+
+    @FindBy(id = "bylineInfo")
+    private WebElement infoDesc;
+
 
     public SearchListTest(WebDriver driver) {
         super(driver);
@@ -40,32 +46,21 @@ class SearchListTest extends TestBase {
     }
 
 
-
-
-
-    public searchForItem(String text) {
-
-        searchTextBox.sendKeys(text);
-        searchTextBox.sendKeys(Keys.ENTER);
-
-        return new search;
-
-
-
-
-        WebElement searchBar = driver.findElement(By.id());
-        searchBar.sendKeys(SEARCHED_ITEM);
-        searchBar.sendKeys(Keys.ENTER);
+    public void searchForItem(String SEARCHED_ITEM) {
 
 
         WebDriverWait waiter = new WebDriverWait(driver , 2);
-        waiter.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()=\"Cheyenne\"]"))).click();
-        driver.findElement(By.xpath("//span[text()=\"Cheyenne Tattoo Machine Hawk Pen - Black\"]")).click();
-        String product = driver.findElement(By.id("productTitle")).getText();
-        Assertions.assertTrue(product.contains("Cheyenne Tattoo Machine Hawk Pen - Black"));
-        String brand = driver.findElement(By.id("bylineInfo")).getText();
-        Assertions.assertTrue(brand.equals("Brand: Cheyenne"));
+        searchTextBox.sendKeys(SEARCHED_ITEM);
+        searchTextBox.sendKeys(Keys.ENTER);
+        driver.manage().timeouts().implicitlyWait(5 , TimeUnit.SECONDS);
+        searchCategoryTattooMachineParts.sendKeys(Keys.SPACE);
+        waiter.until(ExpectedConditions.presenceOfElementLocated((By) CheyenneHawkPen)).click();
+        productDesc.getText();
+        infoDesc.getText();
 
+        Assertions.assertEquals("Cheyenne Tattoo Machine Hawk Pen - Black" , productDesc);
+        Assertions.assertEquals("Brand: Cheyenne" , infoDesc);
     }
-
 }
+
+
