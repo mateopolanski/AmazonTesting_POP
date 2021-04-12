@@ -29,7 +29,7 @@ class AddItemToBasket extends TestBase {
     private WebElement product2;
 
     @FindBy (xpath = "//span[text()=\"Dragonhawk Mast Tattoo Cartridges Needles 50pcs " +
-                    "Round Liner Mixed 3RL 5RL 7RL 9RL 11RL Size for Machine Kit Supply (50pcs RL)\"]"; )
+                    "Round Liner Mixed 3RL 5RL 7RL 9RL 11RL Size for Machine Kit Supply (50pcs RL)\"]")
     private WebElement product3;
 
     @FindBy (id = "add-to-cart-button")
@@ -45,6 +45,7 @@ class AddItemToBasket extends TestBase {
     void addItems() {
 
         WebDriverWait wait = new WebDriverWait(driver , 3);
+
 
         searchItem1.sendKeys(INK_ITEM);
         searchItem1.sendKeys(Keys.ENTER);

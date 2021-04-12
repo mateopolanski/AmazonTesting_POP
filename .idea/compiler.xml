@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AmazonTesting_PageObjectPattern" target="6" />
+      <module name="AmazonTesting_PageObjectPattern" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>

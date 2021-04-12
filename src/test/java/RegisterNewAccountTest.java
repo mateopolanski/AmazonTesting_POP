@@ -20,7 +20,6 @@ class RegisterNewAccountTest {
    private Totp totp = new Totp(otpKeyStr);
    private String twoFactorCode = totp.now(); // <- got 2FA coed at this time!
 
-
    @BeforeEach
     void navigateToHomepage() {
 

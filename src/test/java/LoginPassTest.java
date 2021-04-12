@@ -43,16 +43,16 @@ class LoginPassTest {
        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
        try {
-       WebElement signName = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
+           WebElement signName = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
            String match = signName.getText();
            Assertions.assertEquals("Hello, AmazonTester" , match);
        } catch (ExceptionInInitializerError e) {
-           System.out.println("Captcha Appeared");
-       }
-   }
+        System.out.println("Captcha Appeared");
+    }
+}
 
-       @AfterEach
-        void closeDriver () {
+    @AfterEach
+    void closeDriver () {
 
        driver.quit();
        }
