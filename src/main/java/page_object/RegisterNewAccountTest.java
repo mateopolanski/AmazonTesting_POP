@@ -1,3 +1,5 @@
+package page_object;
+
 import org.jboss.aerogear.security.otp.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;

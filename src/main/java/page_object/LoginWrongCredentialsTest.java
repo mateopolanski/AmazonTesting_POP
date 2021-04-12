@@ -1,3 +1,5 @@
+package page_object;
+
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
@@ -41,7 +43,7 @@ class LoginWrongCredentialsTest {
 
        /*
        Program should not log into account as an password authorisation key is not correct. Valid password is given
-       in LoginPassTest.class
+       in page_object.LoginPassTest.class
         */
    }
 

@@ -2,6 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.testng.*;
 import org.testng.annotations.*;
+import page_object.*;
 import utils.*;
 
 @Listeners

@@ -1,6 +1,7 @@
+package page_object;
+
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.asserts.*;
@@ -44,7 +45,7 @@ class SearchListTest extends TestBase {
         return URL;
     }
 
-    @Test
+
     public void searchForItem(String SEARCHED_ITEM) {
 
 
