@@ -14,8 +14,11 @@ class SearchListTest extends TestBase {
 
     private static final String URL = PropertyManager.getProperty("url.homepage");
     private WebDriver driver;
-    private static final String SEARCHED_ITEM = "cheyenne";
+    private static final String SEARCHED_ITEM = PropertyManager.getProperty("search.word");
 
+    public SearchListTest (WebDriver driver){
+        this.driver = driver;
+    }
 
     @FindBy(id = "twotabsearchtextbox")
     private WebElement searchTextBox;
@@ -36,17 +39,12 @@ class SearchListTest extends TestBase {
     private WebElement infoDesc;
 
 
-    public SearchListTest(WebDriver driver) {
-        super(driver);
-
-    }
-
     @Override
     public String getPageURL() {
         return URL;
     }
 
-
+    @Test
     public void searchForItem(String SEARCHED_ITEM) {
 
 

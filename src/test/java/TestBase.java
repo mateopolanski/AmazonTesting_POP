@@ -11,13 +11,16 @@ public abstract class TestBase {
     protected BrowserManager browserManager;
 
     protected AddItemToBasket addItemToBasket;
-//    protected LoginPassTest loginPassTest;
-//    protected LoginWrongCredentialsTest loginWrongCredentialsTest;
-//    protected RegisterNewAccountTest registerNewAccountTest;
+    protected LoginPassTest loginPassTest;
+    protected LoginWrongCredentialsTest loginWrongCredentialsTest;
+    protected RegisterNewAccountTest registerNewAccountTest;
     protected SearchListTest searchListTest;
 
     public TestBase(WebDriver driver){
         PageFactory.initElements(driver,this);
+    }
+
+    protected TestBase() {
     }
 
     @Parameters("browserType")

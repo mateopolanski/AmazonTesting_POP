@@ -2,6 +2,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
+import utils.*;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -10,11 +11,13 @@ class LoginWrongCredentialsTest {
 
 
    private WebDriver driver;
-   private final String ACCOUNT_EMAIL = "dxc03609@cuoly.com";
+   private final String ACCOUNT_EMAIL = PropertyManager.getProperty("login.incorrect.email");
    private Random randomGenerator = new Random();
    private int badAuthorizationPass = randomGenerator.nextInt(10000);
 
-
+   public LoginWrongCredentialsTest(WebDriver driver){
+      this.driver = driver;
+   }
 
 
     void unsuccessfullLoginToExistingAccount() {

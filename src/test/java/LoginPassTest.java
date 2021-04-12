@@ -2,6 +2,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
+import utils.*;
 
 import java.util.concurrent.*;
 
@@ -9,13 +10,14 @@ import java.util.concurrent.*;
 class LoginPassTest {
 
 
-    private static final String CHROME_DRIVER_PATH = "D:\\chromedriver.exe";
-    private static final String AMAZON_HOMEPAGE = "https:\\amazon.com";
+
     private WebDriver driver;
-    private final String ACCOUNT_EMAIL = "dxc03609@cuoly.com";
-    private final String AUTH_PASS = "Password12345";
+    private final String ACCOUNT_EMAIL = PropertyManager.getProperty("login.correct.email");
+    private final String AUTH_PASS = PropertyManager.getProperty("login.correct.pass");
 
-
+    public LoginPassTest (WebDriver driver){
+        this.driver = driver;
+    }
 
     void successfullLginToExistingAccount() {
 

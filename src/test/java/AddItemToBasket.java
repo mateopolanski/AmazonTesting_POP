@@ -10,13 +10,13 @@ import java.util.concurrent.*;
 class AddItemToBasket extends TestBase {
 
 
-    private WebDriver driver;
+
     private static final String INK_ITEM = PropertyManager.getProperty("ink.item");
     private static final String CARTRIDGE_ITEM = PropertyManager.getProperty("tattoo cartridge");
 
 
-    public AddItemToBasket(WebDriver driver) {
-        super(driver);
+    public AddItemToBasket (WebDriver driver) {
+        this.driver = driver;
     }
 
     @FindBy (id = "twotabsearchtextbox")
