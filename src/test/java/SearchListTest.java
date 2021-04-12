@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.asserts.*;
+import utils.*;
 
 import java.util.concurrent.*;
 
@@ -11,7 +12,7 @@ import java.util.concurrent.*;
 class SearchListTest extends TestBase {
 
 
-    private static final String URL = "https:\\amazon.com";
+    private static final String URL = PropertyManager.getProperty("url.homepage");
     private WebDriver driver;
     private static final String SEARCHED_ITEM = "cheyenne";
 
@@ -37,7 +38,7 @@ class SearchListTest extends TestBase {
 
     public SearchListTest(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+
     }
 
     @Override

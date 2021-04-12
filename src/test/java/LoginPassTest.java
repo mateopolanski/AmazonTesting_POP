@@ -42,10 +42,6 @@ class LoginPassTest {
 
        driver.manage().timeouts().implicitlyWait(3 , TimeUnit.SECONDS);
 
-       /*
-       at this point Amazon after few successful login attempts, Amazon may try to present to screen with captcha
-       verification, to prevent access for access by an Automatic software, and manual verification is needed
-        */
        try {
        WebElement signName = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
            String match = signName.getText();

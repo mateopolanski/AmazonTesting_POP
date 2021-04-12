@@ -17,7 +17,7 @@ public abstract class TestBase {
     protected SearchListTest searchListTest;
 
     public TestBase(WebDriver driver){
-        PageFactory.initElements(driver,this );
+        PageFactory.initElements(driver,this);
     }
 
     @Parameters("browserType")

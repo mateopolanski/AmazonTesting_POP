@@ -16,15 +16,6 @@ class LoginWrongCredentialsTest {
    private int badAuthorizationPass = randomGenerator.nextInt(10000);
 
 
-   @BeforeEach
-    void navigateToHomepage() {
-
-       System.setProperty("webdriver.chrome.driver" , CHROME_DRIVER_PATH);
-       driver = new ChromeDriver();
-       driver.manage().window().maximize();
-       driver.get(AMAZON_HOMEPAGE);
-
-   }
 
    @Test
     void unsuccessfullLoginToExistingAccount() {
@@ -52,9 +43,4 @@ class LoginWrongCredentialsTest {
         */
    }
 
-   @AfterEach
-    void closeDriver () {
-
-       driver.quit();
-   }
 }
