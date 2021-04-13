@@ -3,6 +3,7 @@ package page_object;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import utils.*;
 
@@ -17,11 +18,25 @@ class LoginPassTest {
     private final String ACCOUNT_EMAIL = PropertyManager.getProperty("login.correct.email");
     private final String AUTH_PASS = PropertyManager.getProperty("login.correct.pass");
 
+    @FindBy (xpath = "//span[@class=\"nav-line-2 nav-long-width\"]")
+    private WebElement signInBtn;
+
+    @FindBy (id ="ap_mail")
+    private WebElement emailField;
+
+    @FindBy (className = "a-button_input")
+    private WebElement button;
+
+    @FindBy (id = "ap_password")
+    private WebElement passwordField;
+
     public LoginPassTest (WebDriver driver){
         this.driver = driver;
     }
 
     void successfullLginToExistingAccount() {
+
+
 
         WebElement signInBtn = driver.findElement(By.xpath("//span[@class=\"nav-line-2 nav-long-width\"]"));
         signInBtn.click();
